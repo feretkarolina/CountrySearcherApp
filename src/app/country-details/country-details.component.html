@@ -4,7 +4,7 @@
   <img src="{{selectedCountry.flag}}" alt="Flag" style="width:50px;height:40px;">
 
   <div>
-    <label>Domain: </label> {{selectedCountry.domain}}
+    <label>Domain: </label> {{selectedCountry.topLevelDomain}}
   </div>
 
   <div>
@@ -28,19 +28,15 @@
   </div>
 
   <div>
-    <label>Timezone: </label> {{selectedCountry.timezone}}
-  </div>
-
-  <div>
     <label>Borders: </label> {{selectedCountry.borders}}
   </div>
 
   <div>
-    <label>Currencies: </label> {{selectedCountry.currencies}}
+    <label>Currencies: </label> {{selectedCountry.currencies[0].code}}
   </div>
 
   <div>
-    <label>Languages: </label> {{selectedCountry.languages}}
+    <label>Languages: </label> {{selectedCountry.languages[0].name}}
   </div>
 
 </div>

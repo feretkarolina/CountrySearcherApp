@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { COUNTRIES } from '../mock-countries';
 import { Country } from '../country';
 
 @Component({
@@ -9,7 +8,6 @@ import { Country } from '../country';
 })
 export class CountryDetailsComponent implements OnInit {
 
-  countries = COUNTRIES;
   @Input() selectedCountry?: Country;
 
   constructor() { }

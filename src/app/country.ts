@@ -1,15 +1,13 @@
 export interface Country {
-  id: number;
   name: string;
-  domain: string;
+  topLevelDomain: string;
   capital: string;
   region: string;
   subregion: string;
   population: number;
   area: number;
-  timezone: string;
   borders: string;
-  currencies: string;
+  currencies: [];
   languages: string;
   flag: string;
 }

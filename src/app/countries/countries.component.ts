@@ -23,6 +23,7 @@ export class CountriesComponent implements OnInit {
   }
 
   getCountries(): void {
-    this.countries = this.countryService.getCountries();
+    this.countryService.getCountries('russia')
+      .subscribe(countries => this.countries = countries);
   }
 }
