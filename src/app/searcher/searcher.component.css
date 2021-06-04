@@ -1,0 +1,28 @@
+/* Add a black background color to the top navigation */
+
+
+.nav {
+  padding-bottom: 15px;
+}
+
+/* Style the links inside the navigation bar */
+.nav a {
+ /* float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px; */
+  color: gray;
+  border-bottom: 3px solid transparent;
+}
+
+.nav a:hover {
+  border-bottom: 3px solid #007bff;
+}
+
+.nav a.active {
+  border-bottom: 3px solid #007bff;
+  color: black;
+}

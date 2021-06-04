@@ -11,6 +11,7 @@ export class SearcherComponent implements OnInit {
 
   countries?: Country[];
   searchBy = 'name';
+  searchValue?: string;
 
   constructor(private countryService: CountryService) { }
 
@@ -18,6 +19,7 @@ export class SearcherComponent implements OnInit {
   }
 
   search(value: string): void {
+    this.searchValue = value;
     this.countryService.getCountries(this.searchBy, value)
       .subscribe(countries => this.countries = countries);
   }

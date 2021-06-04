@@ -1,5 +1,5 @@
 <div *ngIf="countries">
-  <h2>Country search results</h2>
+  <h2>Country search results by '{{searchValue}}' {{searchBy}} ({{countries.length}} results)</h2>
   <ul class="countries">
     <li *ngFor="let country of countries" (click)="onSelect(country)">
       {{country.name}}

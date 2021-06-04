@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { Country } from '../country';
-import { CountryService } from '../country.service';
+import {count} from 'rxjs/operators';
 
 @Component({
   selector: 'app-countries',
@@ -9,10 +9,12 @@ import { CountryService } from '../country.service';
 })
 export class CountriesComponent implements OnInit {
 
+  @Input() searchBy?: string;
+  @Input() searchValue?: string;
   @Input() countries?: Country[];
   selectedCountry?: Country;
 
-  constructor(private countryService: CountryService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
