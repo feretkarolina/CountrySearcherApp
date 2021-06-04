@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { Country } from '../country';
 import { CountryService } from '../country.service';
 
@@ -9,21 +9,15 @@ import { CountryService } from '../country.service';
 })
 export class CountriesComponent implements OnInit {
 
-  countries: Country[] = [];
+  @Input() countries?: Country[];
   selectedCountry?: Country;
 
   constructor(private countryService: CountryService) { }
 
   ngOnInit(): void {
-    this.getCountries();
   }
 
   onSelect(country: Country): void {
     this.selectedCountry = country;
-  }
-
-  getCountries(): void {
-    this.countryService.getCountries('russia')
-      .subscribe(countries => this.countries = countries);
   }
 }

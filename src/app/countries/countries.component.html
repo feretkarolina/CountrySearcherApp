@@ -1,7 +1,10 @@
-<h2>Country search results</h2>
-<ul class="countries">
-  <li *ngFor="let country of countries" (click)="onSelect(country)">
-    {{country.name}}
-  </li>
-</ul>
-<app-country-details [selectedCountry]="selectedCountry"></app-country-details>
+<div *ngIf="countries">
+  <h2>Country search results</h2>
+  <ul class="countries">
+    <li *ngFor="let country of countries" (click)="onSelect(country)">
+      {{country.name}}
+    </li>
+  </ul>
+
+  <app-country-details [selectedCountry]="selectedCountry"></app-country-details>
+</div>

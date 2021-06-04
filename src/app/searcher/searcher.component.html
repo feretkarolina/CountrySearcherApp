@@ -2,20 +2,22 @@
 
 <ul class="nav">
   <li class="nav-item">
-    <a class="nav-link active" href="#">NAME</a>
+    <a class="nav-link active" href="#" (click)="selectSearchBy('name')">NAME</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">CAPITAL CITY</a>
+    <a class="nav-link" href="#" (click)="selectSearchBy('capital')">CAPITAL CITY</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">CURRENCY</a>
+    <a class="nav-link" href="#" (click)="selectSearchBy('currency')">CURRENCY</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">LANGUAGE</a>
+    <a class="nav-link" href="#" (click)="selectSearchBy('lang')">LANGUAGE</a>
   </li>
 </ul>
 
-<form class="form-group">
-  <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-  <button class="btn btn-primary" type="submit">Search</button>
-</form>
+<div class="form-group">
+  <input #searchBox class="form-control" type="search" placeholder="Search" aria-label="Search">
+  <button class="btn btn-primary" type="submit" (click)="search(searchBox.value)">Search</button>
+</div>
+
+<app-countries [countries]="countries"></app-countries>
