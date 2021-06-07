@@ -18,4 +18,8 @@ export class CountryService {
     }
     return this.http.get<Country[]>(`${this.countriesUrl}/${searchBy}/${value}`);
   }
+
+  getCountry(name: string): Observable<Country[]> {
+    return this.http.get<Country[]>(`${this.countriesUrl}/name/${name}?fullText=true`);
+  }
 }

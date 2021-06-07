@@ -2,22 +2,20 @@
 
 <ul class="nav">
   <li class="nav-item">
-    <a class="nav-link active" href="#" [class.active]="'name' === searchBy" (click)="selectSearchBy('name')">NAME</a>
+    <a class="nav-link active" [class.active]="'name' === searchBy" (click)="selectSearchBy('name')">NAME</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#" [class.active]="'capital' === searchBy" (click)="selectSearchBy('capital')">CAPITAL CITY</a>
+    <a class="nav-link" [class.active]="'capital' === searchBy" (click)="selectSearchBy('capital')">CAPITAL CITY</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#" [class.active]="'currency' === searchBy" (click)="selectSearchBy('currency')">CURRENCY</a>
+    <a class="nav-link" [class.active]="'currency' === searchBy" (click)="selectSearchBy('currency')">CURRENCY</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#" [class.active]="'lang' === searchBy" (click)="selectSearchBy('lang')">LANGUAGE</a>
+    <a class="nav-link" [class.active]="'lang' === searchBy" (click)="selectSearchBy('lang')">LANGUAGE</a>
   </li>
 </ul>
 
 <div class="form-group">
-  <input #searchBox class="form-control" type="search" placeholder="Search" aria-label="Search">
+  <input #searchBox class="form-control" type="text" (keydown.enter)="search(searchBox.value)">
   <button class="btn btn-primary" type="submit" (click)="search(searchBox.value)">Search</button>
 </div>
-
-<app-countries [searchBy]="searchBy" [searchValue]="searchValue" [countries]="countries"></app-countries>

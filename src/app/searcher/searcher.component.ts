@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CountryService} from '../country.service';
-import {Country} from '../country';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-searcher',
@@ -9,22 +8,18 @@ import {Country} from '../country';
 })
 export class SearcherComponent implements OnInit {
 
-  countries?: Country[];
   searchBy = 'name';
-  searchValue?: string;
 
-  constructor(private countryService: CountryService) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  search(value: string): void {
-    this.searchValue = value;
-    this.countryService.getCountries(this.searchBy, value)
-      .subscribe(countries => this.countries = countries);
-  }
-
   selectSearchBy(searchBy: string): void {
     this.searchBy = searchBy;
+  }
+
+  search(value: string): void {
+    this.router.navigate(['/countries', this.searchBy, value]);
   }
 }

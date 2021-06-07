@@ -7,6 +7,7 @@ import { SearcherComponent } from './searcher/searcher.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CountriesComponent } from './countries/countries.component';
 import { CountryDetailsComponent } from './country-details/country-details.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -15,11 +16,12 @@ import { CountryDetailsComponent } from './country-details/country-details.compo
     CountriesComponent,
     CountryDetailsComponent
   ],
-  imports: [
-    BrowserModule,
-    NgbModule,
-    HttpClientModule,
-  ],
+    imports: [
+        BrowserModule,
+        NgbModule,
+        HttpClientModule,
+        AppRoutingModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

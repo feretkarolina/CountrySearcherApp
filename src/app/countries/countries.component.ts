@@ -1,6 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { Country } from '../country';
-import {count} from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
+import { CountryService } from '../country.service';
 
 @Component({
   selector: 'app-countries',
@@ -9,17 +10,23 @@ import {count} from 'rxjs/operators';
 })
 export class CountriesComponent implements OnInit {
 
-  @Input() searchBy?: string;
-  @Input() searchValue?: string;
-  @Input() countries?: Country[];
-  selectedCountry?: Country;
+  searchBy?: string;
+  searchValue?: string;
+  countries?: Country[];
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private countryService: CountryService
+  ) { }
 
   ngOnInit(): void {
+    this.getCountries();
   }
 
-  onSelect(country: Country): void {
-    this.selectedCountry = country;
+  getCountries(): void {
+    this.searchBy = String(this.route.snapshot.paramMap.get('searchby'));
+    this.searchValue = String(this.route.snapshot.paramMap.get('value'));
+    this.countryService.getCountries(this.searchBy, this.searchValue)
+      .subscribe(countries => this.countries = countries);
   }
 }
