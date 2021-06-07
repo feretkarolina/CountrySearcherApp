@@ -9,11 +9,11 @@ const routes: Routes = [
   { path: '', redirectTo: '/search', pathMatch: 'full' },
   { path: 'search', component: SearcherComponent },
   { path: 'countries/:searchby/:value', component: CountriesComponent },
-  { path: 'detail/:country', component: CountryDetailsComponent}
+  { path: 'detail/:code', component: CountryDetailsComponent, runGuardsAndResolvers: 'always'}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
