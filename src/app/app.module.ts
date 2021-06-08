@@ -8,13 +8,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CountriesComponent } from './countries/countries.component';
 import { CountryDetailsComponent } from './country-details/country-details.component';
 import { AppRoutingModule } from './app-routing.module';
+import { Covid19Component } from './covid19/covid19.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearcherComponent,
     CountriesComponent,
-    CountryDetailsComponent
+    CountryDetailsComponent,
+    Covid19Component
   ],
     imports: [
         BrowserModule,

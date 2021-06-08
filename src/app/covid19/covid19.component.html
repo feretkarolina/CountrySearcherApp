@@ -1,0 +1,8 @@
+<label> Covid-19 statistics: </label>
+<ul>
+  <div *ngFor="let covid19 of covid19Statistics; index as i" >
+    <li *ngIf="i != 0">Date: {{covid19.Date}}, NewCases: {{covid19.Confirmed - covid19Statistics[i-1].Confirmed}}, Active: {{covid19.Active}},
+    Confirmed: {{covid19.Confirmed}}, Deaths: {{covid19.Deaths}}, Recovered: {{covid19.Recovered}}
+    </li>
+  </div>
+</ul>

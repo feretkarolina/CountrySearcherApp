@@ -28,15 +28,17 @@
   </div>
 
   <div>
-    <label>Borders:&nbsp;</label><a *ngFor="let brd of selectedCountry.borders" routerLink="/detail/{{brd}}">{{brd}},</a>
+    <label>Borders:&nbsp;</label><a *ngFor="let brd of selectedCountry.borders" routerLink="/detail/{{brd}}">{{brd}}, </a>
   </div>
 
   <div>
-    <label>Currencies:&nbsp;</label><span *ngFor="let currency of selectedCountry.currencies">{{currency.code}}</span>
+    <label>Currencies:&nbsp;</label><span *ngFor="let currency of selectedCountry.currencies">{{currency.code}}, </span>
   </div>
 
   <div>
-    <label>Languages:&nbsp;</label><span *ngFor="let language of selectedCountry.languages">{{language.name}}</span>
+    <label>Languages:&nbsp;</label><span *ngFor="let language of selectedCountry.languages">{{language.name}}, </span>
   </div>
 
 </div>
+
+<app-covid19></app-covid19>

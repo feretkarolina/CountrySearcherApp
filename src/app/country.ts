@@ -8,7 +8,7 @@ export interface Country {
   population: number;
   area: number;
   borders: string;
-  currencies: [];
+  currencies: string;
   languages: string;
   flag: string;
 }
