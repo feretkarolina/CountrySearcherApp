@@ -1,8 +1,11 @@
-<div *ngIf="countries">
+<div class="app-countries" *ngIf="countries">
+
   <h2>Country search results by '{{searchValue}}' {{searchBy}} ({{countries.length}} results)</h2>
+
   <ul class="countries">
     <li *ngFor="let country of countries" routerLink="/detail/{{country.alpha3Code}}">
       {{country.name}}
     </li>
   </ul>
+
 </div>

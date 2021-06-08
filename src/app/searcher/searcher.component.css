@@ -1,5 +1,11 @@
 /* Add a black background color to the top navigation */
 
+.app-searcher {
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
 
 .nav {
   padding-bottom: 15px;
@@ -25,4 +31,9 @@
 .nav a.active {
   border-bottom: 3px solid #007bff;
   color: black;
+}
+
+.btn {
+  margin-top: 10px;
+  float: right;
 }

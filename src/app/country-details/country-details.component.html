@@ -1,7 +1,7 @@
-<div *ngIf="selectedCountry">
+<div class="app-country-details"  *ngIf="selectedCountry">
 
   <h2>{{selectedCountry.name}}</h2>
-  <img src="{{selectedCountry.flag}}" alt="Flag" style="width:50px;height:40px;">
+  <img id="flag" src="{{selectedCountry.flag}}" alt="Flag">
 
   <div>
     <label>Domain: </label> {{selectedCountry.topLevelDomain}}
@@ -39,6 +39,6 @@
     <label>Languages:&nbsp;</label><span *ngFor="let language of selectedCountry.languages">{{language.name}}, </span>
   </div>
 
-</div>
+  <app-covid19></app-covid19>
 
-<app-covid19></app-covid19>
+</div>
